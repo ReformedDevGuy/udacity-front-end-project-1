@@ -1,0 +1,199 @@
+@import "layout.css";
+@import "nav.css";
+@import "footer.css";
+
+/* Alt Text Styling */
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* Grid Container */
+
+#grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 300px auto auto 30px;
+  grid-template-areas:
+    "nav"
+    "hd"
+    "post"
+    "post-suggestions"
+    "ft";
+}
+
+@media (min-width: 600px) {
+  #grid-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px auto 30px;
+    grid-template-areas:
+      "nav nav"
+      "hd post"
+      "ft ft";
+  }
+}
+
+/* Main Content */
+
+header {
+  grid-area: hd;
+  width: 100%;
+  height: auto;
+  background-image: url("../img/224Valkyrie-3.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+#post {
+  padding: 0 30px 20px 30px;
+}
+
+@media (min-width: 600px) {
+  #post {
+    overflow: scroll;
+    padding: 0 30px 0px 30px;
+  }
+}
+
+footer {
+  grid-area: ft;
+  height: 30px;
+  color: #222;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+/* Author Blurb Box */
+
+.meta {
+  text-align: center;
+}
+
+.post-info {
+  font-family: "Girassol", serif;
+  letter-spacing: 0.05em;
+  margin: 0.2em 0;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.author-info {
+  width: 100%;
+  height: auto;
+  color: #fffaf0;
+  background-color: #971b23;
+  padding: 10px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author-info p {
+  margin: 0;
+}
+
+.author-info hr {
+  width: 75%;
+}
+
+.author-info-text {
+  width: 100%;
+}
+
+.author-info .fab {
+  outline: none;
+  text-decoration: none;
+  color: #fffaf0;
+}
+
+.author-info .fab:hover {
+  color: #444;
+}
+
+.circle-frame {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  border-radius: 50%;
+  padding: 10px 20px;
+}
+
+.author-info-img {
+  border-radius: 50%;
+  width: 100%;
+  height: auto;
+  min-width: 100px;
+  max-width: 200px;
+  object-fit: cover;
+}
+
+@media (min-width: 1000px) {
+  .author-info {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .circle-frame {
+    width: 40%;
+  }
+
+  .author-info-text {
+    width: 60%;
+  }
+}
+
+/* Featured Image */
+
+.blog-article img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.blog-article p {
+  text-indent: 2em;
+  line-height: 1.5em;
+}
+
+/* Post Suggestions */
+
+hr {
+  border-top: 1px solid #971b23;
+  margin: 20px 0;
+}
+
+.post-suggestions {
+  grid-area: post-suggestions;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  justify-content: space-around;
+  align-items: flex-end;
+  text-align: center;
+}
+
+.post-suggestions h4 {
+  width: 100%;
+}
+
+.suggestion-card {
+  width: 30%;
+  min-width: 120px;
+  height: auto;
+}
+
+.suggestion-card h6 {
+  font-size: 1.2em;
+}
+
+.suggestion-card-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
